@@ -115,8 +115,12 @@ Push-Location $libgit2Directory
             <Link>lib\osx\lib$binaryFilename.dylib</Link>
             <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
         </None>
-        <None Condition="Exists('`$(MSBuildThisFileDirectory)\..\..\runtimes\linux-x64\native\lib$binaryFilename.so')" Include="`$(MSBuildThisFileDirectory)\..\..\runtimes\linux-x64\native\lib$binaryFilename.so">
-            <Link>lib\linux\x86_64\lib$binaryFilename.so</Link>
+        <None Condition="Exists('`$(MSBuildThisFileDirectory)\..\..\runtimes\ubuntu-x64\native\lib$binaryFilename.so')" Include="`$(MSBuildThisFileDirectory)\..\..\runtimes\ubuntu-x64\native\lib$binaryFilename.so">
+            <Link>lib\ubuntu-x64\lib$binaryFilename.so</Link>
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </None>
+        <None Condition="Exists('`$(MSBuildThisFileDirectory)\..\..\runtimes\centos-x64\native\lib$binaryFilename.so')" Include="`$(MSBuildThisFileDirectory)\..\..\runtimes\centos-x64\native\lib$binaryFilename.so">
+            <Link>lib\centos-x64\lib$binaryFilename.so</Link>
             <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
         </None>
         <None Include="`$(MSBuildThisFileDirectory)\..\..\libgit2\LibGit2Sharp.dll.config">
@@ -131,7 +135,7 @@ Push-Location $libgit2Directory
 
     $dllConfig = @"
 <configuration>
-    <dllmap os="linux" cpu="x86-64" wordsize="64" dll="$binaryFilename" target="lib/linux/x86_64/lib$binaryFilename.so" />
+    <dllmap os="linux" cpu="x86-64" wordsize="64" dll="$binaryFilename" target="lib/ubuntu-x64/lib$binaryFilename.so" />
     <dllmap os="osx" cpu="x86,x86-64" dll="$binaryFilename" target="lib/osx/lib$binaryFilename.dylib" />
 </configuration>
 "@

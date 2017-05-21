@@ -21,8 +21,12 @@
             <Link>lib\osx\libgit2-1196807.dylib</Link>
             <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
         </None>
-        <None Condition="Exists('$(MSBuildThisFileDirectory)\..\..\runtimes\linux-x64\native\libgit2-1196807.so')" Include="$(MSBuildThisFileDirectory)\..\..\runtimes\linux-x64\native\libgit2-1196807.so">
-            <Link>lib\linux\x86_64\libgit2-1196807.so</Link>
+        <None Condition="Exists('$(MSBuildThisFileDirectory)\..\..\runtimes\ubuntu-x64\native\libgit2-1196807.so')" Include="$(MSBuildThisFileDirectory)\..\..\runtimes\ubuntu-x64\native\libgit2-1196807.so">
+            <Link>lib\ubuntu-x64\libgit2-1196807.so</Link>
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </None>
+        <None Condition="Exists('$(MSBuildThisFileDirectory)\..\..\runtimes\centos-x64\native\libgit2-1196807.so')" Include="$(MSBuildThisFileDirectory)\..\..\runtimes\centos-x64\native\libgit2-1196807.so">
+            <Link>lib\centos-x64\libgit2-1196807.so</Link>
             <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
         </None>
         <None Include="$(MSBuildThisFileDirectory)\..\..\libgit2\LibGit2Sharp.dll.config">
